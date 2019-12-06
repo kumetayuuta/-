@@ -12,37 +12,58 @@ public class Hensin : MonoBehaviour
     public Sprite WaterSprite;
     public Sprite ThunderSprite;
 
+    GameObject Star;
     void Start()
     {
         MainSpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        this.Star = GameObject.Find("Star");
     }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Z))//Ｚが押されたら通常スライムになる
         {
-            Nomal();
-            MainSpriteRenderer.sprite = NomalSprite;
+            if (this.Star.GetComponent<Image>().fillAmount != 0.1)//もしも星があったら変身できる
+            {
+                Nomal();
+                MainSpriteRenderer.sprite = NomalSprite;
+                this.Star.GetComponent<Image>().fillAmount -= 0.2f;
+            }
         }
         if (Input.GetKeyDown(KeyCode.A))//Ａが押されたら炎スライムになる
         {
-            Flam();
-            MainSpriteRenderer.sprite = FlamSprite;
+            if (this.Star.GetComponent<Image>().fillAmount != 0.1)//もしも星があったら変身できる
+            {
+                Flam();
+                MainSpriteRenderer.sprite = FlamSprite;
+                this.Star.GetComponent<Image>().fillAmount -= 0.2f;
+            }
         }
         if (Input.GetKeyDown(KeyCode.S))//Ｓが押されたら水スライムになる
         {
-            water();
-            MainSpriteRenderer.sprite = WaterSprite;
+            if (this.Star.GetComponent<Image>().fillAmount != 0.1)//もしも星があったら変身できる
+            {
+                water();
+                MainSpriteRenderer.sprite = WaterSprite;
+                this.Star.GetComponent<Image>().fillAmount -= 0.2f;
+            }
         }
         if (Input.GetKeyDown(KeyCode.D))//Ｄが押されたら雷スライムになる
         {
-            Thunder();
-            MainSpriteRenderer.sprite = ThunderSprite;
+            if (this.Star.GetComponent<Image>().fillAmount != 0.1)//もしも星があったら変身できる
+            {
+                Thunder();
+                MainSpriteRenderer.sprite = ThunderSprite;
+                this.Star.GetComponent<Image>().fillAmount -= 0.2f;
+            }
         }
     }
     void Nomal()
     {
+        if (Input.GetKeyDown(KeyCode.C))//Cを押したら
+        {
 
+        }
     }
     void Flam()
     {
