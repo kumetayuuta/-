@@ -379,6 +379,7 @@ GameObject:
   - component: {fileID: 1334058210}
   - component: {fileID: 1334058212}
   - component: {fileID: 1334058211}
+  - component: {fileID: 1334058213}
   m_Layer: 5
   m_Name: Star
   m_TagString: Untagged
@@ -442,6 +443,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1334058209}
   m_CullTransparentMesh: 0
+--- !u!114 &1334058213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1334058209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4d827b77767088418fd6cf23fef59eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StarPoint: 10
 --- !u!1 &1744923066
 GameObject:
   m_ObjectHideFlags: 0
@@ -595,6 +609,7 @@ MonoBehaviour:
   FlamSprite: {fileID: 21300000, guid: 6b8a94d5a8795054988c89e904953530, type: 3}
   WaterSprite: {fileID: 21300000, guid: a674594546384cc4491a745c46a234e7, type: 3}
   ThunderSprite: {fileID: 21300000, guid: f1df5dcf84ea81647a33908a87f2b0b0, type: 3}
+  StarPoint: {fileID: 1334058213}
 --- !u!224 &1744923073
 RectTransform:
   m_ObjectHideFlags: 0

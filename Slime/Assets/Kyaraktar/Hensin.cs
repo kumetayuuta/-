@@ -13,6 +13,10 @@ public class Hensin : MonoBehaviour
     public Sprite ThunderSprite;
 
     GameObject Star;
+
+   public StarScripts StarPoint;
+
+
     void Start()
     {
         MainSpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
@@ -21,36 +25,28 @@ public class Hensin : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Z))//Ｚが押されたら通常スライムになる
+        if (StarPoint.StarPoint<1.9)//もしも星があったら変身できる
         {
-            if (this.Star.GetComponent<Image>().fillAmount != 0.1)//もしも星があったら変身できる
+            if (Input.GetKeyDown(KeyCode.Z))//Ｚが押されたら通常スライムになる
             {
-                Nomal();
-                MainSpriteRenderer.sprite = NomalSprite;
-                this.Star.GetComponent<Image>().fillAmount -= 0.2f;
+            Nomal();
+            MainSpriteRenderer.sprite = NomalSprite;
+            this.Star.GetComponent<Image>().fillAmount -= 0.2f;
+            
             }
-        }
-        if (Input.GetKeyDown(KeyCode.A))//Ａが押されたら炎スライムになる
-        {
-            if (this.Star.GetComponent<Image>().fillAmount != 0.1)//もしも星があったら変身できる
-            {
-                Flam();
-                MainSpriteRenderer.sprite = FlamSprite;
-                this.Star.GetComponent<Image>().fillAmount -= 0.2f;
+            if (Input.GetKeyDown(KeyCode.A))//Ａが押されたら炎スライムになる
+            {          
+             Flam();
+             MainSpriteRenderer.sprite = FlamSprite;
+             this.Star.GetComponent<Image>().fillAmount -= 0.2f;
             }
-        }
-        if (Input.GetKeyDown(KeyCode.S))//Ｓが押されたら水スライムになる
-        {
-            if (this.Star.GetComponent<Image>().fillAmount != 0.1)//もしも星があったら変身できる
-            {
-                water();
-                MainSpriteRenderer.sprite = WaterSprite;
-                this.Star.GetComponent<Image>().fillAmount -= 0.2f;
+            if (Input.GetKeyDown(KeyCode.S))//Ｓが押されたら水スライムになる
+            {           
+             water();
+             MainSpriteRenderer.sprite = WaterSprite;
+             this.Star.GetComponent<Image>().fillAmount -= 0.2f;
             }
-        }
-        if (Input.GetKeyDown(KeyCode.D))//Ｄが押されたら雷スライムになる
-        {
-            if (this.Star.GetComponent<Image>().fillAmount != 0.1)//もしも星があったら変身できる
+            if (Input.GetKeyDown(KeyCode.D))//Ｄが押されたら雷スライムになる
             {
                 Thunder();
                 MainSpriteRenderer.sprite = ThunderSprite;
