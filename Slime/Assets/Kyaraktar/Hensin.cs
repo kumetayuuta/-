@@ -12,7 +12,7 @@ public class Hensin : MonoBehaviour
     public Sprite WaterSprite;
     public Sprite ThunderSprite;
 
-    GameObject Star;
+    GameObject Star;//変身する時のポイントを取得している
 
    public StarScripts StarPoint;
 
@@ -25,41 +25,41 @@ public class Hensin : MonoBehaviour
 
     void Update()
     {
-        if (StarPoint.StarPoint<1.9)//もしも星があったら変身できる
+        if (StarPoint.StarPoint>1)//もしも星があったら変身できる
         {
             if (Input.GetKeyDown(KeyCode.Z))//Ｚが押されたら通常スライムになる
             {
-            Nomal();
-            MainSpriteRenderer.sprite = NomalSprite;
-            this.Star.GetComponent<Image>().fillAmount -= 0.2f;
-            
+                Nomal();
+                MainSpriteRenderer.sprite = NomalSprite;//スライムの姿ＵＩの更新
+                this.Star.GetComponent<Image>().fillAmount -= 0.2f;//変身ポイントＵＩの更新
+                StarPoint.StarPoint = -1;//変身したらポイントが１減る
             }
             if (Input.GetKeyDown(KeyCode.A))//Ａが押されたら炎スライムになる
             {          
-             Flam();
-             MainSpriteRenderer.sprite = FlamSprite;
-             this.Star.GetComponent<Image>().fillAmount -= 0.2f;
+               Flam();
+               MainSpriteRenderer.sprite = FlamSprite;//スライムの姿ＵＩの更新
+                this.Star.GetComponent<Image>().fillAmount -= 0.2f;//変身ポイントＵＩの更新
+                StarPoint.StarPoint = -1;//変身したらポイントが１減る
             }
             if (Input.GetKeyDown(KeyCode.S))//Ｓが押されたら水スライムになる
             {           
-             water();
-             MainSpriteRenderer.sprite = WaterSprite;
-             this.Star.GetComponent<Image>().fillAmount -= 0.2f;
+              water();
+              MainSpriteRenderer.sprite = WaterSprite;//スライムの姿ＵＩの更新
+              this.Star.GetComponent<Image>().fillAmount -= 0.2f;//変身ポイントＵＩの更新
+                StarPoint.StarPoint = -1;//変身したらポイントが１減る
             }
             if (Input.GetKeyDown(KeyCode.D))//Ｄが押されたら雷スライムになる
             {
                 Thunder();
-                MainSpriteRenderer.sprite = ThunderSprite;
-                this.Star.GetComponent<Image>().fillAmount -= 0.2f;
+                MainSpriteRenderer.sprite = ThunderSprite;//スライムの姿ＵＩの更新
+                this.Star.GetComponent<Image>().fillAmount -= 0.2f;//変身ポイントＵＩの更新
+                StarPoint.StarPoint = -1;//変身したらポイントが１減る
             }
         }
     }
     void Nomal()
     {
-        if (Input.GetKeyDown(KeyCode.C))//Cを押したら
-        {
 
-        }
     }
     void Flam()
     {

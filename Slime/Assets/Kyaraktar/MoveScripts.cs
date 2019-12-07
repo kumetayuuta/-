@@ -7,6 +7,7 @@ public class MoveScripts : MonoBehaviour
     Rigidbody2D rigidbody2D;
     float speed = 0;//キャラクター移動スピード
     float JampForce = 400.0f;//キャラクタージャンプ距離
+
     void Start()
     {
         this.rigidbody2D = GetComponent<Rigidbody2D>();

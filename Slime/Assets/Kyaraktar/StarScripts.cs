@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class StarScripts : MonoBehaviour
 {
-    public int StarPoint=10;
+    public int StarPoint=5;
 
     void Start()
     {
