@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2623712736582697065}
   - component: {fileID: 7885185558886185293}
   - component: {fileID: 1791817777814213945}
+  - component: {fileID: 1522666742595272577}
   m_Layer: 0
   m_Name: "\u708E\u30A8\u30D5\u30A7\u30AF\u30C8\u306E\u30B3\u30D4\u30FC"
   m_TagString: Untagged
@@ -92,3 +93,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca9a09e7060a4354190572f3f7c30a09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!61 &1522666742595272577
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3525385430603161685}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.18, y: -0.26}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4, y: 4}
+    newSize: {x: 4, y: 4}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.62, y: 0.61}
+  m_EdgeRadius: 0
