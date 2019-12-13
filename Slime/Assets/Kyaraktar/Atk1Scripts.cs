@@ -12,10 +12,9 @@ public class Atk1Scripts : MonoBehaviour
         
     }
 
-    // Update is called once per frame
     void Update()
     {
-        transform.Translate(0.1f,0,0);
+        transform.Translate(0.1f * transform.localScale.x,0,0);
         this.delta += Time.deltaTime;
         if (this.delta>this.span)
         {

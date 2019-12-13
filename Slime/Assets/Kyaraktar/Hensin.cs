@@ -28,48 +28,28 @@ public class Hensin : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Z))//Ｚが押されたら通常スライムになる
             {
-                Nomal();
                 MainSpriteRenderer.sprite = NomalSprite;//スライムの姿ＵＩの更新
                 this.Star.GetComponent<Image>().fillAmount -= 0.2f;//変身ポイントＵＩの更新
                 StarPoint.StarPoint += -1;//変身したらポイントが１減る
             }
             if (Input.GetKeyDown(KeyCode.A))//Ａが押されたら炎スライムになる
             {          
-               Flam();
                 MainSpriteRenderer.sprite = FlamSprite;//スライムの姿ＵＩの更新
                 this.Star.GetComponent<Image>().fillAmount -= 0.2f;//変身ポイントＵＩの更新
                 StarPoint.StarPoint += -1;//変身したらポイントが１減る
             }
             if (Input.GetKeyDown(KeyCode.S))//Ｓが押されたら水スライムになる
             {           
-              water();
               MainSpriteRenderer.sprite = WaterSprite;//スライムの姿ＵＩの更新
               this.Star.GetComponent<Image>().fillAmount -= 0.2f;//変身ポイントＵＩの更新
                 StarPoint.StarPoint += -1;//変身したらポイントが１減る
             }
             if (Input.GetKeyDown(KeyCode.D))//Ｄが押されたら雷スライムになる
             {
-                Thunder();
                 MainSpriteRenderer.sprite = ThunderSprite;//スライムの姿ＵＩの更新
                 this.Star.GetComponent<Image>().fillAmount -= 0.2f;//変身ポイントＵＩの更新
                 StarPoint.StarPoint += -1;//変身したらポイントが１減る
             }
         }
-    }
-    void Nomal()
-    {
-
-    }
-    void Flam()
-    {
-
-    }
-    void water()
-    {
-
-    }
-    void Thunder()
-    {
-
     }
 }
