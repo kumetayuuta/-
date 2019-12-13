@@ -4,27 +4,20 @@ using UnityEngine;
 
 public class FlemSremAtk1 : MonoBehaviour
 {
-    public GameObject Flemsrematk１;
-    float Span = 3.0f;
-    float delta = 0;
-
+    public GameObject FlemAtk1;
     void Start()
     {
         
     }
-
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))//１が押されたら
+        if (Input.GetKeyDown(KeyCode.Alpha1))//生成と出る場所を変えている
         {
-            transform.Translate(0.1f, 0, 0);//１フレームごとに横に移動していく
-            GameObject go = Instantiate(Flemsrematk１) as GameObject;
-            this.delta += Time.deltaTime;
-            go.transform.position =new Vector3(0, 0, 0);
-            if (this.delta > this.Span)
-            {
-                this.delta = 0;
-            }
+            GameObject go = Instantiate(FlemAtk1) as GameObject;//生成
+            Vector3 pos = transform.position;
+            pos.x += transform.localScale.x;//炎を打つところを変えている　スケールを利用している
+            pos.y +=transform.localScale.y*0.4f;//　　　　　　　〃
+            go.transform.position =pos;
         }
     }
 }

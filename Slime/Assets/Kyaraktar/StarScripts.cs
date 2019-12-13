@@ -11,7 +11,6 @@ public class StarScripts : MonoBehaviour
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         

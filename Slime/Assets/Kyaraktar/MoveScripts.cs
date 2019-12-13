@@ -7,7 +7,7 @@ public class MoveScripts : MonoBehaviour
     Rigidbody2D rigidbody2D;
     float speed = 0;//キャラクター移動スピード
     float JampForce = 400.0f;//キャラクタージャンプ距離
-
+    int key = 0;
     void Start()
     {
         this.rigidbody2D = GetComponent<Rigidbody2D>();
@@ -23,6 +23,7 @@ public class MoveScripts : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.RightArrow))//右矢印が押されている間右に移動
         {
             this.speed = 0.05f;
+            key = 1;
         }
         if (Input.GetKeyUp(KeyCode.RightArrow))//右矢印が押されていない間速度を０にする
         {
@@ -31,10 +32,15 @@ public class MoveScripts : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftArrow))//左矢印が押されている間左に移動
         {
             this.speed = -0.05f;
+            key = -1;
         }
         if (Input.GetKeyUp(KeyCode.LeftArrow))//左矢印が押されていない間速度を０にする
         {
             this.speed = 0.0f;
+        }
+        if (key!=0)
+        {
+            transform.localScale = new Vector3(key, 1, 1);
         }
     }
     void Janp()//ジャンプ
