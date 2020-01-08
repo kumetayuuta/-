@@ -4,17 +4,23 @@ using UnityEngine;
 
 public class GoblinHand : MonoBehaviour
 {
-    float a = 5f;
+    float a = 1.3f;
+    float span = 0.8f;
+    float delta = 0;
 
-    // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
-            transform.Rotate(0, 0, a);
+        transform.Rotate(0, 0, a);
+        this.delta += Time.deltaTime;
+        if (this.delta>this.span)
+        {
+            this.delta = 0;
+            Destroy(gameObject);
+        }
     }
 }

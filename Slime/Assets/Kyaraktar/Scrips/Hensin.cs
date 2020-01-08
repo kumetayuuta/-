@@ -49,14 +49,14 @@ public class Hensin : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.A))//Ａが押されたら炎スライムになる
             {
-                kakunin = 1;
+                kakunin = 2;
                 MainSpriteRenderer.sprite = FlamSprite;//スライムの姿ＵＩの更新
                 this.Star.GetComponent<Image>().fillAmount -= 0.2f;//変身ポイントＵＩの更新
                 StarPoint.StarPoint += -1;//変身したらポイントが１減る
             }
             if (Input.GetKeyDown(KeyCode.S))//Ｓが押されたら水スライムになる
             {
-                kakunin = 2;
+                kakunin = 1;
               MainSpriteRenderer.sprite = WaterSprite;//スライムの姿ＵＩの更新
               this.Star.GetComponent<Image>().fillAmount -= 0.2f;//変身ポイントＵＩの更新
                 StarPoint.StarPoint += -1;//変身したらポイントが１減る
