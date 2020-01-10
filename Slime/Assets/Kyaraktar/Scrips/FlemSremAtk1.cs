@@ -35,7 +35,7 @@ public class FlemSremAtk1 : MonoBehaviour
         }
         if (kakunin.kakunin == 2)
         {
-            if (Input.GetKey(KeyCode.Alpha2))//炎攻撃の生成と出る場所を変えている
+            if (Input.GetKey(KeyCode.Alpha1))//炎攻撃の生成と出る場所を変えている
             {
                 this.delta += Time.deltaTime;
                 if (this.delta > this.span)
@@ -55,7 +55,8 @@ public class FlemSremAtk1 : MonoBehaviour
         }
         if (kakunin.kakunin==3)
         {
-            if (Input.GetKeyDown(KeyCode.Alpha3))//雷攻撃の生成と出る場所を変えている
+            if (Input.GetKeyDown(KeyCode.Alpha1
+                ))//雷攻撃の生成と出る場所を変えている
             {
                 GameObject go3 = Instantiate(Atk3) as GameObject;//生成
                 Vector3 pos3 = transform.position;

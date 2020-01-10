@@ -8,6 +8,8 @@ public class MoveScripts : MonoBehaviour
     float speed = 0;//キャラクター移動スピード
     float JampForce = 300.0f;//キャラクタージャンプ距離
     int key = 0;
+    float span = 0.8f;
+    float delta = 0;
     void Start()
     {
         this.rigidbody2D = GetComponent<Rigidbody2D>();
@@ -16,6 +18,7 @@ public class MoveScripts : MonoBehaviour
     {
         Move();
         Janp();
+        this.delta += Time.deltaTime;
     }
     void Move()//左右移動
      {
@@ -45,9 +48,13 @@ public class MoveScripts : MonoBehaviour
     }
     void Janp()//ジャンプ
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (this.delta>this.span)
         {
-            this.rigidbody2D.AddForce(transform.up * this.JampForce);
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                this.rigidbody2D.AddForce(transform.up * this.JampForce);
+                this.delta = 0;
+            }
         }
     }
 }

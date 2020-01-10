@@ -5,15 +5,25 @@ using UnityEngine;
 public class GobrinKoujou : MonoBehaviour
 {
     public GameObject GobrinObject;
-    // Start is called before the first frame update
+    float span = 1.0f;
+    float delta = 0;
+    public GameObject Gobrin;
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+   
     void Update()
     {
-        GameObject go = Instantiate(GobrinObject) as GameObject;
+        this.delta += Time.deltaTime;
+        float px = transform.position.x;
+        float py = transform.position.y+0.3f;
+        if (this.delta>this.span)
+        {
+            this.delta = 0;
+            GameObject go = Instantiate(GobrinObject) as GameObject;
+            go.transform.position = new Vector3(px,py,0);
+        }
     }
 }
