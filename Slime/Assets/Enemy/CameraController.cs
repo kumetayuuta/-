@@ -31,8 +31,6 @@ public class CameraController : MonoBehaviour
 
         if (distance < this.offset || distance > cameraMaxDistance)
         {
-
-
             Vector3 targetPosition = target.transform.position;
             targetPosition.x += (this.offset * target.transform.localScale.x);
             transform.position = Vector3.Lerp(transform.position, targetPosition, 0.05f);

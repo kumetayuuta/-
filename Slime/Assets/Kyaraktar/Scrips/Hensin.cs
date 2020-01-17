@@ -40,7 +40,7 @@ public class Hensin : MonoBehaviour
         }
         if (StarPoint.StarPoint>0)//もしも星があったら変身できる
         {
-            if (Input.GetKeyDown(KeyCode.Z))//Ｚが押されたら通常スライムになる
+            if (Input.GetKeyDown(KeyCode.W))//Ｚが押されたら通常スライムになる
             {
                 kakunin = 0;
                 MainSpriteRenderer.sprite = NomalSprite;//スライムの姿ＵＩの更新

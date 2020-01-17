@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1522666742595272577}
   m_Layer: 0
   m_Name: "\u708E\u30A8\u30D5\u30A7\u30AF\u30C8\u306E\u30B3\u30D4\u30FC"
-  m_TagString: Untagged
+  m_TagString: PlayerAtk
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -106,7 +106,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.18, y: -0.26}
+  m_Offset: {x: 0.04, y: -0.26}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}

@@ -14,11 +14,19 @@ public class Atk1Scripts : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(0.1f * transform.localScale.x,0,0);
+        transform.Translate(0.1f * transform.localScale.x, 0, 0);
         this.delta += Time.deltaTime;
-        if (this.delta>this.span)
+        if (this.delta > this.span)
         {
             Destroy(gameObject);
         }
     }
+        void OnTriggerEnter2D(Collider2D col)
+        {
+            if (col.gameObject.tag == "Enemy")
+            {
+              Destroy(gameObject);
+            }
+        }
+    
 }

@@ -14,7 +14,6 @@ public class GoblinHand : MonoBehaviour
 
     void Update()
     {
-
         transform.Rotate(0, 0, a);
         this.delta += Time.deltaTime;
         if (this.delta>this.span)
