@@ -24,8 +24,8 @@ public class FlemSremAtk1 : MonoBehaviour
 
                 GameObject go1 = Instantiate(Atk1) as GameObject;//生成
                 Vector3 pos = transform.position;
-                pos.x += transform.localScale.x;//炎を打つところを変えている　スケールを利用している
-                pos.y += transform.localScale.y * 0.2f;//　　　　　　　〃
+                pos.x += transform.localScale.x*0.4f;//炎を打つところを変えている　スケールを利用している
+                pos.y += transform.localScale.y * 0.8f;//　　　　　　　〃
                 go1.transform.position = pos;
                 go1.transform.localScale = new Vector3(transform.localScale.x,//攻撃画像反転
                                                         go1.transform.localScale.y,
@@ -43,8 +43,8 @@ public class FlemSremAtk1 : MonoBehaviour
                     GameObject go2 = Instantiate(Atk2) as GameObject;//生成
                     this.delta = 0;
                     Vector3 pos2 = transform.position;
-                    pos2.x += transform.localScale.x;
-                    pos2.y += transform.localScale.y - 0.2f;
+                    pos2.x += transform.localScale.x+0.4f;
+                    pos2.y += transform.localScale.y - 0.4f;
                     go2.transform.position = pos2;
                     go2.transform.localScale = new Vector3(transform.localScale.x,//攻撃画像反転
                                                         go2.transform.localScale.y,
@@ -59,8 +59,8 @@ public class FlemSremAtk1 : MonoBehaviour
             {
                 GameObject go3 = Instantiate(Atk3) as GameObject;//生成
                 Vector3 pos3 = transform.position;
-                pos3.x += transform.position.x + 10;
-                pos3.y += transform.position.y + 7;
+                pos3.x += transform.position.x+20;
+                pos3.y += transform.position.y+5;
                 go3.transform.position = pos3;
             }
         }
