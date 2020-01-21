@@ -6,7 +6,7 @@ public class GameClearScripts : MonoBehaviour
 {
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetMouseButtonDown(0))
         {
             SceneManager.LoadScene("StageSelectScene");
         }

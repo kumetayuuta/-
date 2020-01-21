@@ -6,43 +6,39 @@ public class MoveScripts : MonoBehaviour
 {
     Rigidbody2D rigidbody2D;
     float speed = 0;//キャラクター移動スピード
-    public bool jp = true;//ジャンプ中はtrue
-    public float Jamp= 300.0f;//キャラクタージャンプ距離
+    public bool jp = true;//ジャンプ中はfalse
+    float JumpForce = 300.0f;
     int key = 0;
     float span = 0.8f;
     float delta = 0;
+
     void Start()
     {
-        this.rigidbody2D = GetComponent<Rigidbody2D>();
-        Jamp = 3f * Time.deltaTime;
+     this.rigidbody2D = GetComponent<Rigidbody2D>();
     }
     void Update()
     {
         Move();
         this.delta += Time.deltaTime;
-        //接地していて上キー入力があった場合ジャンプできるようにする
-        if (!jp && Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space))
+        {
+            if (jp == true)
+            {
+                Jump();
+                jp = false;
+            }
+        }
+    }
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.tag == "Ground")
         {
             jp = true;
-            Jump();
         }
     }
     void Jump()
     {
-        // 現在の加速度（rigidbodyの）を取得
-        Vector2 velocity = rigidbody2D.velocity;
-        // ジャンプ量を y (縦) 方向に代入
-        velocity.y = Jamp;
-        // 代入加速度へ変更
-        rigidbody2D.velocity = velocity;
-    }
-    // 地面にぶつかった瞬間に呼び出される
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.name == "Groun")
-        {
-            jp = false;
-        }
+        this.rigidbody2D.AddForce(transform.up*this.JumpForce);
     }
     void Move()//左右移動
      {

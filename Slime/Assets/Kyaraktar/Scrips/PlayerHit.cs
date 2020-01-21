@@ -8,6 +8,8 @@ public class PlayerHit : MonoBehaviour
 {
     GameObject Hp;
     int PlaterHp = 10;
+    public AudioClip Hit;
+
     void Start()
     {
         this.Hp = GameObject.Find("Hp");
@@ -27,6 +29,7 @@ public class PlayerHit : MonoBehaviour
         {
             this.Hp.GetComponent<Image>().fillAmount -= 0.1f;
             PlaterHp -= 1;
+            GetComponent<AudioSource>().PlayOneShot(Hit);
         }
     }
 }

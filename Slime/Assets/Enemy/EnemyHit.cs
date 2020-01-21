@@ -7,6 +7,7 @@ public class EnemyHit : MonoBehaviour
 {
     public GameObject enemy;
     public GoblinHp GoburinHp;
+    public AudioClip Hit;
     void Start()
     {
 
@@ -17,11 +18,12 @@ public class EnemyHit : MonoBehaviour
     {
 
     }
-        void OnTriggerEnter2D(Collider2D col)
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.tag == "PlayerAtk")
         {
-            if (col.gameObject.tag == "PlayerAtk")
-            {
-                GoburinHp.GoburinHp += -1;
-            }
+            GetComponent<AudioSource>().PlayOneShot(Hit);
+            GoburinHp.GoburinHp += -1;
         }
+    }
 }

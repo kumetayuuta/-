@@ -21,12 +21,11 @@ public class Atk1Scripts : MonoBehaviour
             Destroy(gameObject);
         }
     }
-        void OnTriggerEnter2D(Collider2D col)
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.tag == "Enemy")
         {
-            if (col.gameObject.tag == "Enemy")
-            {
-              Destroy(gameObject);
-            }
+            Destroy(gameObject);
         }
-    
+    }    
 }

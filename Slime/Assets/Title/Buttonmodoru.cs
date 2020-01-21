@@ -4,8 +4,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class Buttonmodoru : MonoBehaviour
 {
-    public void OnClickmodoru()
+    void Update()
     {
-        SceneManager.LoadScene("TitleScene");
+        if (Input.GetMouseButtonDown(0))
+        {
+            SceneManager.LoadScene("TitleScene");
+        }   
     }
 }

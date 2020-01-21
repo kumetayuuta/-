@@ -21,11 +21,10 @@ public class FlemSremAtk1 : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Z))//水攻撃の生成と出る場所を変えている
             {
-
                 GameObject go1 = Instantiate(Atk1) as GameObject;//生成
                 Vector3 pos = transform.position;
-                pos.x += transform.localScale.x*0.4f;//炎を打つところを変えている　スケールを利用している
-                pos.y += transform.localScale.y * 0.8f;//　　　　　　　〃
+                pos.x += transform.localScale.x*0.9f;//水を打つところを変えている　スケールを利用している
+                pos.y += transform.localScale.y*0.1f;//　　　　　　　〃
                 go1.transform.position = pos;
                 go1.transform.localScale = new Vector3(transform.localScale.x,//攻撃画像反転
                                                         go1.transform.localScale.y,
@@ -59,8 +58,8 @@ public class FlemSremAtk1 : MonoBehaviour
             {
                 GameObject go3 = Instantiate(Atk3) as GameObject;//生成
                 Vector3 pos3 = transform.position;
-                pos3.x += transform.position.x+20;
-                pos3.y += transform.position.y+5;
+                pos3.x += transform.position.x+15.0f;
+                pos3.y += transform.position.y+10.0f;
                 go3.transform.position = pos3;
             }
         }

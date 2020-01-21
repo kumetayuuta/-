@@ -42,31 +42,47 @@ public class Hensin : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.W))//Ｚが押されたら通常スライムになる
             {
-                kakunin = 0;
-                MainSpriteRenderer.sprite = NomalSprite;//スライムの姿ＵＩの更新
-                this.Star.GetComponent<Image>().fillAmount -= 0.2f;//変身ポイントＵＩの更新
-                StarPoint.StarPoint += -1;//変身したらポイントが１減る
+                if (kakunin != 0)
+                {
+                    kakunin = 0;
+                    MainSpriteRenderer.sprite = NomalSprite;//スライムの姿ＵＩの更新
+                    this.Star.GetComponent<Image>().fillAmount -= 0.2f;//変身ポイントＵＩの更新
+                    StarPoint.StarPoint += -1;//変身したらポイントが１減る
+                    GetComponent<AudioSource>().Play();
+                }
             }
             if (Input.GetKeyDown(KeyCode.A))//Ａが押されたら炎スライムになる
             {
-                kakunin = 2;
-                MainSpriteRenderer.sprite = FlamSprite;//スライムの姿ＵＩの更新
-                this.Star.GetComponent<Image>().fillAmount -= 0.2f;//変身ポイントＵＩの更新
-                StarPoint.StarPoint += -1;//変身したらポイントが１減る
+                if (kakunin != 2)
+                {
+                    kakunin = 2;
+                    MainSpriteRenderer.sprite = FlamSprite;//スライムの姿ＵＩの更新
+                    this.Star.GetComponent<Image>().fillAmount -= 0.2f;//変身ポイントＵＩの更新
+                    StarPoint.StarPoint += -1;//変身したらポイントが１減る
+                    GetComponent<AudioSource>().Play();
+                }
             }
             if (Input.GetKeyDown(KeyCode.S))//Ｓが押されたら水スライムになる
             {
-                kakunin = 1;
-              MainSpriteRenderer.sprite = WaterSprite;//スライムの姿ＵＩの更新
-              this.Star.GetComponent<Image>().fillAmount -= 0.2f;//変身ポイントＵＩの更新
-                StarPoint.StarPoint += -1;//変身したらポイントが１減る
+                if (kakunin != 1)
+                {
+                    kakunin = 1;
+                    MainSpriteRenderer.sprite = WaterSprite;//スライムの姿ＵＩの更新
+                    this.Star.GetComponent<Image>().fillAmount -= 0.2f;//変身ポイントＵＩの更新
+                    StarPoint.StarPoint += -1;//変身したらポイントが１減る
+                    GetComponent<AudioSource>().Play();
+                }
             }
             if (Input.GetKeyDown(KeyCode.D))//Ｄが押されたら雷スライムになる
             {
-                kakunin = 3;
-                MainSpriteRenderer.sprite = ThunderSprite;//スライムの姿ＵＩの更新
-                this.Star.GetComponent<Image>().fillAmount -= 0.2f;//変身ポイントＵＩの更新
-                StarPoint.StarPoint += -1;//変身したらポイントが１減る
+                if (kakunin != 3)
+                {
+                    kakunin = 3;
+                    MainSpriteRenderer.sprite = ThunderSprite;//スライムの姿ＵＩの更新
+                    this.Star.GetComponent<Image>().fillAmount -= 0.2f;//変身ポイントＵＩの更新
+                    StarPoint.StarPoint += -1;//変身したらポイントが１減る
+                    GetComponent<AudioSource>().Play();
+                }
             }
         }
     }

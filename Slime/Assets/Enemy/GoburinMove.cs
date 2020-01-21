@@ -4,15 +4,35 @@ using UnityEngine;
 
 public class GoburinMove : MonoBehaviour
 {
-    // Start is called before the first frame update
+   
+    float speed = 0.0f;
+    public bool AtkOK=false;
+    GameObject player;
+    
     void Start()
     {
-        
+        this.player = GameObject.Find("スライム");
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        float distance = Vector2.Distance(transform.position, this.player.transform.position);//距離を求める
+        if (distance < 5f&& distance > 2.5f)
+        {
+            AtkOK = false;
+             speed = 2.0f;
+            if (transform.position.x > this.player.transform.position.x)
+            {
+                transform.Translate(-this.speed * Time.deltaTime, 0, 0);
+            }
+            else if (transform.position.x < this.player.transform.position.x)
+            {
+                transform.Translate(this.speed * Time.deltaTime, 0, 0);
+            }
+        }
+        else 
+        {
+            AtkOK = true;
+        }
     }
 }
