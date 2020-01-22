@@ -17,14 +17,14 @@ public class GobrinKoujou : MonoBehaviour
    
     void Update()
     {
-        if (AtkOK.AtkOK==true)
-        {
           this.delta += Time.deltaTime;
           float px = transform.position.x;
           float py = transform.position.y+0.3f;
-            if (this.delta > this.span)
+        if (this.delta > this.span)
+        {
+            this.delta = 0;
+            if (AtkOK.AtkOK == true)
             {
-                this.delta = 0;
                 GameObject go = Instantiate(GobrinObject) as GameObject;
                 go.transform.position = new Vector3(px, py, 0);
             }

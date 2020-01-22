@@ -58,8 +58,8 @@ public class FlemSremAtk1 : MonoBehaviour
             {
                 GameObject go3 = Instantiate(Atk3) as GameObject;//生成
                 Vector3 pos3 = transform.position;
-                pos3.x += transform.position.x+15.0f;
-                pos3.y += transform.position.y+10.0f;
+                pos3.x +=6.0f;
+                pos3.y +=10.0f;
                 go3.transform.position = pos3;
             }
         }
