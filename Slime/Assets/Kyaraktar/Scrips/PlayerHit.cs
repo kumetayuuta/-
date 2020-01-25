@@ -20,7 +20,7 @@ public class PlayerHit : MonoBehaviour
         if (PlaterHp<=0)
         {
             SceneManager.LoadScene("GameOverScene");
-        }  
+        }
     }
 
     void OnTriggerEnter2D(Collider2D col)

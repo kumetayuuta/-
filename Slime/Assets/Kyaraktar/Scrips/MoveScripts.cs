@@ -20,7 +20,7 @@ public class MoveScripts : MonoBehaviour
     {
         Move();
         this.delta += Time.deltaTime;
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             if (jp == true)
             {

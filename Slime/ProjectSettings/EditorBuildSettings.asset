@@ -15,6 +15,12 @@ EditorBuildSettings:
     path: Assets/Scenes/StageEasyScene.unity
     guid: 29d3ec9e06608fc48846ee4246ec3af9
   - enabled: 1
+    path: Assets/Scenes/SecandStage.unity
+    guid: f931298418d4b3640bb4b7ef09996c27
+  - enabled: 1
+    path: Assets/Scenes/HardStageSelene.unity
+    guid: 349ee29f6b237a4448c54c12c81d72bc
+  - enabled: 1
     path: Assets/Scenes/GameClearScene.unity
     guid: 9840b5c94640a8d40ba7e531616e28b0
   - enabled: 1

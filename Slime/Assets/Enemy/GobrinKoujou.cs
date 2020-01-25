@@ -9,6 +9,7 @@ public class GobrinKoujou : MonoBehaviour
     float span = 1.0f;
     float delta = 0;
     public GameObject Gobrin;
+    public GoblinHp kesu;
     void Start()
     {
         
@@ -17,6 +18,10 @@ public class GobrinKoujou : MonoBehaviour
    
     void Update()
     {
+        if (kesu.kesu==0)
+        {
+            Destroy(gameObject);
+        }
           this.delta += Time.deltaTime;
           float px = transform.position.x;
           float py = transform.position.y+0.3f;

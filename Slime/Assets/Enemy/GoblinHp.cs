@@ -7,6 +7,7 @@ public class GoblinHp : MonoBehaviour
     [SerializeField]
     public int GoburinHp = 1;
     public GameObject Enemy;
+    public int kesu = 1;
     void Start()
     {
         
@@ -17,6 +18,7 @@ public class GoblinHp : MonoBehaviour
         if (GoburinHp<=0)
         {
             Destroy(Enemy);
+            kesu = 0;
         }
     }
 }
